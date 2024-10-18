@@ -3,7 +3,6 @@
 using namespace std;
 
 void insertionSort(int arr[], int n) {
-    
     for (int i = 1; i < n; ++i) {
         int temp = arr[i];
         int idx = i - 1;
@@ -20,7 +19,7 @@ void printArray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
-    cout << endl;
+    cout << "\n";
 }
 
 int main() {
