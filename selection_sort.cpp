@@ -1,20 +1,13 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-int main() {
-    int arr[] = {17, 23, 7, 59, 73, 13, 37, 53, 47};
-    int n = sizeof(arr) / sizeof(arr[0]);
+void selectionSort(int arr[], int size) {
 
-    cout << "Unsorted Array:" << endl;
-    for (int i = 0; i < n; ++i) {
-        cout << arr[i] << ' ';
-    }
-    cout << endl;
-
-    for (int i = 0; i < n - 1; ++i) {
+    for (int i = 0; i < size - 1; ++i) {
         int min_idx = i;
-        for (int j = i + 1; j < n; ++j) {
+        for (int j = i + 1; j < size; ++j) {
             if (arr[j] < arr[min_idx]) {
                 min_idx = j;
             }
@@ -23,12 +16,26 @@ int main() {
         arr[min_idx] = arr[i];
         arr[i] = temp;
     }
-    
-    cout << "\nSorted Array:" << endl;
-    for (int i = 0; i < n; ++i) {
-        cout << arr[i] << ' ';
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
     }
-    cout << endl;
+    cout << "\n";
+}
+
+int main() {
+    int arr[] = {17, 23, 7, 59, 73, 13, 37, 53, 47};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Unsorted Array:\n";
+    printArray(arr, size);
+
+    selectionSort(arr, size);
+
+    cout << "\nSorted Array:\n";
+    printArray(arr, size);
 
     return 0;
 }
